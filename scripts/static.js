@@ -1,11 +1,16 @@
-var app = require('connect')();
+var Connect = require('connect')();
+var cors = require('connect-cors')
 var path = require('path');
 var connect_livereload = require('connect-livereload');
 var serve_static = require('serve-static');
 
 var args = Array.prototype.slice.call(process.argv, 2, 4);
-var root = args[0] || 'public/';
+var root = args[0] || 'build/';
 var port = args[1] || 3000;
+
+var app = Connect(
+    cors()
+);
 
 app.use(connect_livereload());
 
