@@ -1,4 +1,4 @@
-var Connect = require('connect')();
+var Connect = require('connect');
 var cors = require('connect-cors')
 var path = require('path');
 var connect_livereload = require('connect-livereload');
