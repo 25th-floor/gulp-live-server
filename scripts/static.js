@@ -9,6 +9,9 @@ var root = args[0] || 'build/';
 var port = args[1] || 3000;
 
 app.use(cors.acceptNext);
+app.options('*', function(req, res){
+    return res.end();
+});
 app.use(connect_livereload());
 
 root.split(",").forEach(function(r){
